@@ -1,0 +1,13 @@
+{
+    "$schema": "https://raw.githubusercontent.com/skymethod/denoflare/v0.5.11/cli/site/site_config.schema.json",
+    "product": "DenoJobs",
+    "siteMetadata": {
+        "title": "DenoJobs",
+        "description": "A place to find Deno jobs",
+        "origin": "https://denojobs.net",
+        "twitterUsername": "@denojobs",
+        "manifest": {
+            "name": "DenoJobs (denojobs.net)"
+        }
+    }
+}
