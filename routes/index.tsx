@@ -1,24 +1,26 @@
 import { Head } from "$fresh/runtime.ts";
-import Counter from "../islands/Counter.tsx";
+import { HeadElement } from "../components/Head.tsx";
+import { PageProps } from "$fresh/server.ts";
+import { Navbar } from "../components/Navbar.tsx";
 
-export default function Home() {
+
+
+
+export default function Home(ctx: PageProps) {
+  const { url } = ctx;
+  const appName = Deno.env.get('APP_NAME') || 'DenoJobs';
+  
   return (
     <>
-      <Head>
-        <title>Fresh App</title>
-      </Head>
+      <HeadElement
+        description={appName}
+        image={url.href + "og-image.png"}
+        title={appName}
+        url={url}
+      />
+        <Navbar></Navbar>
       <div>
-        <img
-          src="/logo.svg"
-          width="128"
-          height="128"
-          alt="the fresh logo: a sliced lemon dripping with juice"
-        />
-        <p>
-          Welcome to `fresh`. Try updating this message in the ./routes/index.tsx
-          file, and refresh.
-        </p>
-        <Counter start={3} />
+        
       </div>
     </>
   );
